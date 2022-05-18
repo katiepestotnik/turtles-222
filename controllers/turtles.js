@@ -1,7 +1,9 @@
 const express = require('express')
 const Turtle = require('../models/turtles')
+const cors = require('cors')
 const router = express.Router()
 router.use(express.json())
+router.use(cors())
 router.get('/seed', (req, res) => {
     const turtles = [
         { name: "Leonardo", role: "ninja" },
