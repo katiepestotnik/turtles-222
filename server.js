@@ -3,11 +3,12 @@ const express = require('express')
 const app = express()
 PORT = process.env.PORT
 const mongoose = require('./models/connection')
-
+const cors = require('cors')
 const Router = require('./controllers/turtles')
 
 app.use('/turtles', Router)
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req, res)=>{
     res.json({
