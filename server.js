@@ -8,7 +8,7 @@ const Router = require('./controllers/turtles')
 
 app.use('/turtles', Router)
 app.use(express.json())
-app.use(cors())
+app.use(cors({origin: '*'}))
 
 app.get('/', (req, res)=>{
     res.json({
